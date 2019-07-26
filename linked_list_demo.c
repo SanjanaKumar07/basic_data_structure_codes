@@ -26,4 +26,7 @@ int main()
 
     third->data=3;
     third->next=NULL;
+
+    printf("Data in first node is %d \n, in second node is %d and \n in third node is %d",head->data,second->data,third->data);
+
 }
