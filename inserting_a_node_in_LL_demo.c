@@ -16,7 +16,24 @@ void push( struct Node** head_ref, int new_data)
     *head_ref=new_node;
     printf("Value entered");
 }
+//function to add insertion at any node.
+void insert_after(struct Node* prev_node, int new_data)
+{
+    
+    if(prev_node == NULL){
+        printf("The Previous node cannot be null");
+    }
 
+    struct Node* new_node= (struct Node*)malloc(sizeof(struct Node));
+
+    new_node->data= new_data;
+
+    new_node->next=prev_node->next;
+
+    prev_node->next= new_node;
+
+    printf("\n node inserted in between");
+}
 
 
 int main(){
@@ -43,6 +60,6 @@ int main(){
 
     push(head_pointer,10);
     
-
+    insert_after(second,20);
 
 }
