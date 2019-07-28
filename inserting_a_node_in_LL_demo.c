@@ -35,7 +35,29 @@ void insert_after(struct Node* prev_node, int new_data)
     printf("\n node inserted in between");
 }
 
+//function to insert at the end
+void append(struct Node** head_ref, int data){
+    struct Node* new_node = (struct Node*)malloc(sizeof(struct Node));
 
+    struct Node* last = *head_ref;
+
+    new_node->data= data;
+
+    new_node->next= NULL;
+
+    if (*head_ref == NULL) 
+    { 
+       *head_ref = new_node; 
+       return; 
+    } 
+
+    while(last->next != NULL){
+        last = last->next;
+    }
+    last->next = new_node; 
+    return;
+    
+}
 int main(){
     
     struct Node* head = NULL;
@@ -61,5 +83,7 @@ int main(){
     push(head_pointer,10);
     
     insert_after(second,20);
+
+    append(head_pointer,15);
 
 }
